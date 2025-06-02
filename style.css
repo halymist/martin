@@ -1,0 +1,165 @@
+/* Reset and basic layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  background-color: #e6f0e6;
+}
+/*  #e6f0e6; #f4f7f9; #f9f7f4  */
+:root {
+  scroll-padding-top: 100px; /* Adjust this based on your header height */
+}
+
+/* Header with big cozy background */
+.hero {
+  background-image: url('assets/header2.jpg'); /* replace with your actual image filename */
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Overlay darkens the image for readability */
+.hero .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 3em;
+  width: 100%;
+  text-align: center;
+}
+
+/* Main title */
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Navigation menu inside header */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Links styling */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect on links */
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+main {
+  flex: 1;
+  width: 95vw;               /* scale to 90% viewport width */
+  margin: 3em auto;
+  padding: 0 1.5em;        /* a bit more padding */
+  box-sizing: border-box;  /* so padding doesn't increase total width */
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 70vw;            /* wider screens get comfortable width */
+  }
+}
+
+#sluzby ul {
+  padding-left: 1.5em;
+  margin-top: 1em;
+}
+
+#sluzby li {
+  margin-bottom: 0.6em;
+  line-height: 1.5;
+}
+.hours-label {
+  display: inline-block;
+  margin-bottom: 0.3em;  /* Adds some space below the label */
+}
+/* Footer at bottom */
+footer {
+  text-align: center;
+  color: #777;
+  font-size: 0.95em;
+  padding: 2em 1em;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ddd;
+}
+
+footer em {
+  display: block;
+  font-style: italic;
+  margin-bottom: 1em;
+  color: #555;
+}
+
+
+.kontakt-wrapper {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;          /* Use most of the screen */ 
+  margin: 2em auto;
+  flex-wrap: wrap;         /* Allow it to stack on small screens */
+}
+
+.contact-info {
+  flex: 1 1 250px; /* grow/shrink, min width 250px */
+  font-size: 1.1em;
+  color: #333;
+  line-height: 1.5;
+}
+
+.contact-info p {
+  margin: 0.5em 0;
+}
+
+.map-container {
+  flex: 2 1 400px; /* bigger part, min width 400px */
+  height: 350px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 300px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.social-link:hover {
+  text-decoration: underline;
+}
+

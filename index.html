@@ -1,91 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Martin</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: black;
-      height: 100%;
-    }
-
-    #bouncyText {
-      position: absolute;
-      font-size: 3em;
-      font-weight: bold;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      color: white;
-      animation: wiggle 0.2s infinite alternate;
-      pointer-events: none;
-    }
-
-    @keyframes wiggle {
-      0%   { transform: rotate(-5deg) scale(1.05); }
-      100% { transform: rotate(5deg) scale(1); }
-    }
-
-    .emoji {
-      position: absolute;
-      font-size: 2rem;
-      animation: fall 3s linear forwards;
-      pointer-events: none;
-    }
-
-    @keyframes fall {
-      to { transform: translateY(100vh); opacity: 0; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Psychoterapie – Úvod</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="bouncyText">Martin <span style="color:yellow">je kokot</span> LOL</div>
-  <div id="emojiContainer"></div>
+  <header class="hero">
+    <div class="overlay">
+      <h1>Psychoterapie Žáček</h1>
+      <nav>
+        <ul>
+          <li><a href="#sluzby">Služby</a></li>
+          <li><a href="#cenik">Ceník</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="bonus.html">Bonus</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <script>
-    const text = document.getElementById('bouncyText');
-    let x = 100, y = 100;
-    let dx = 4, dy = 3;
-    const colors = ['red', 'lime', 'yellow', 'cyan', 'magenta', 'orange', 'white'];
+  <main>
+    <section id="uvod">
+      <h2>Psychoterapie a psychologická pomoc v Plzni</h2>
+      <p><strong>Mgr. Martin Žáček</strong>, psycholog a psychoterapeut pro dospělé</p>
+      <p>Poskytuji individuální psychologickou pomoc, poradenství a psychoterapii pro dospělé. Zaměřuji se na podporu v náročných životních situacích, řešení osobních problémů a pomoc při hledání nových cest ven z bludných kruhů.</p>
+      <p>Pokud hledáte změnu a potřebujete podporu na své cestě, na těchto stránkách najdete základní informace o tom, co psychoterapie obnáší, kdy je vhodná a jaké metody používám ve své praxi.</p>
+      <p>Psychoterapie je spolupráce, která vyžaduje Vaše odhodlání a energii. Jsem tu, abych Vás podpořil jako průvodce na Vaší cestě k lepšímu životu. I když není všemocná, může být důležitým krokem ke změně.</p>
+      <p>Máte-li zájem o psychoterapii nebo psychologickou pomoc, neváhejte mě  <a href="#kontakt">kontaktovat</a>. Domluvíme si první schůzku a společně probereme, jak Vám mohu pomoci.</p>
+    </section>
 
-    function bounce() {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-      const rect = text.getBoundingClientRect();
+    <br>
+    <section id="sluzby">
+        <h2>V čem mohu pomoci:</h2>
+        <ul>
+            <li>Psychoterapie pro jednotlivce v obtížných životních situacích</li>
+            <li>Lékařská vyšetření neodhalila, proč máte bolesti nebo jiné obtíže</li>
+            <li>Psychoterapie a psychologická pomoc s rodinnými problémy</li>
+            <li>Pomoc v naléhavé, krizové nebo náročné životní situaci</li>
+        </ul>
+    </section>
 
-      x += dx;
-      y += dy;
+    <br>
+    <section id="cenik">
+        <h2>Ceník</h2>
+        <p><strong>Cena:</strong> 1.000 Kč za sezení v trvání 55 minut.</p>
 
-      if (x < 0 || x + rect.width > w) dx *= -1;
-      if (y < 0 || y + rect.height > h) dy *= -1;
+        <p><strong>Příspěvek pro klienty VZP – Program Zvýšení dostupnosti psychosociální podpory:</strong><br>
+        Na osobní či on-line psychoterapii u mne lze čerpat příspěvek VZP ve výši <strong>500 Kč za sezení</strong>.</p>
 
-      text.style.left = `${x}px`;
-      text.style.top = `${y}px`;
+        <p class="small-note">
+            Příspěvek platí pro max. 10 sezení do 30. 11. 2025. VZP proplácí 500 Kč za každou absolvovanou a uhrazenou terapii. Žádat lze po jednotlivých sezeních nebo najednou – ideálně po 10. sezení.
+        </p>
+    </section>
 
-      // Flashy color change
-      text.style.color = colors[Math.floor(Math.random() * colors.length)];
+    <br>
+    <br>
 
-      requestAnimationFrame(bounce);
-    }
+    <section id="kontakt">
+    <h2>Kontakt</h2>
+    <div class="kontakt-wrapper">
+        <div class="contact-info">
+        <p>🕒 <strong class="hours-label">Ordinační hodiny:</strong><br>
+        Čt: 9:00 – 17:00<br>
+        Pá: 9:00 – 17:00<br>
+        (Po domluvě i jiný čas)
+        </p>
+        <br>
+        <p>📍 Adresa: Tylova 123, 301 00 Plzeň </p>
+        <p>📞 Telefon: <a href="tel:+420123456789">+420 123 456 789</a></p>
+        <p>✉️ Email: <a href="mailto:info@psychoterapie.cz">info@psychoterapie.cz</a></p>
+        <p>
+            <a href="https://www.facebook.com/martin.zacek.988" target="_blank" class="social-link">
+            <img src="assets/facebook.svg" alt="Facebook" class="icon"> Facebook
+            </a>
+        </p>
+        <p>
+            <a href="https://www.instagram.com/davis.clarke/" target="_blank" class="social-link">
+            <img src="assets/instagram.svg" alt="Instagram" class="icon"> Instagram
+            </a>
+        </p>
+        </div>
 
-    bounce();
+        <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2534.123456789!2d13.3789143!3d49.747404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470aeaaabc123456%3A0xabcdef123456789!2sPlze%C5%88%2C%20%C4%8Cesk%C3%A1%20republika!5e0!3m2!1scs!2sus!4v1686072738245!5m2!1scs!2sus"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    </section>
 
-    // Emoji rain
-    const emojiContainer = document.getElementById("emojiContainer");
-    const emojis = ["😂", "🔥", "💩", "👀", "😎", "🫠", "💥"];
 
-    function spawnEmoji() {
-      const e = document.createElement("div");
-      e.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-      e.className = "emoji";
-      e.style.left = Math.random() * window.innerWidth + "px";
-      emojiContainer.appendChild(e);
-      setTimeout(() => emojiContainer.removeChild(e), 3000);
-    }
+  </main>
 
-    setInterval(spawnEmoji, 200);
-  </script>
+<footer> <p><em>„Požádat o pomoc není slabost. Je to první krok ke změně.“</em></p></footer>
 </body>
 </html>
