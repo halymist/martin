@@ -8,7 +8,6 @@ html, body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-  background-color: #f9f7f4;
 }
 /*  background-color: #e6f0e6; */
 /*  #e6f0e6; #f4f7f9; #f9f7f4  */
