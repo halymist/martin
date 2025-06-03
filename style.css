@@ -71,6 +71,18 @@ nav a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+@media (max-width: 600px) {
+  nav ul {
+    gap: 0.5em; /* tighter spacing */
+  }
+
+  nav a {
+    font-size: 1em; /* slightly smaller text */
+    padding: 0.4em 0.7em; /* tighter padding */
+  }
+}
+
+
 main {
   flex: 1;
   width: 95vw;               /* scale to 90% viewport width */
