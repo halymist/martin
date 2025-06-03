@@ -155,7 +155,9 @@ footer em {
   overflow: hidden;
   min-width: 300px;
 }
-
+.map-container iframe {
+  touch-action: pan-x pan-y;
+}
 .icon {
   width: 20px;
   height: 20px;
