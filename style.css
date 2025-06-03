@@ -8,16 +8,16 @@ html, body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-  background-color: #e6f0e6;
 }
+/*  background-color: #e6f0e6; */
 /*  #e6f0e6; #f4f7f9; #f9f7f4  */
 :root {
-  scroll-padding-top: 100px; /* Adjust this based on your header height */
+  scroll-padding-top: 100px; 
 }
 
-/* Header with big cozy background */
+/* Header with big background */
 .hero {
-  background-image: url('assets/header2.jpg'); /* replace with your actual image filename */
+  background-image: url('assets/header2.jpg');
   background-size: cover;
   background-position: center;
   height: 60vh;
@@ -73,27 +73,27 @@ nav a:hover {
 
 @media (max-width: 600px) {
   nav ul {
-    gap: 0.5em; /* tighter spacing */
+    gap: 0.5em;
   }
 
   nav a {
-    font-size: 1em; /* slightly smaller text */
-    padding: 0.4em 0.7em; /* tighter padding */
+    font-size: 1em; 
+    padding: 0.4em 0.7em;
   }
 }
 
 
 main {
   flex: 1;
-  width: 95vw;               /* scale to 90% viewport width */
+  width: 95vw;     
   margin: 3em auto;
-  padding: 0 1.5em;        /* a bit more padding */
-  box-sizing: border-box;  /* so padding doesn't increase total width */
+  padding: 0 1.5em; 
+  box-sizing: border-box; 
 }
 
 @media (min-width: 768px) {
   main {
-    width: 70vw;            /* wider screens get comfortable width */
+    width: 70vw; 
   }
 }
 
@@ -108,7 +108,7 @@ main {
 }
 .hours-label {
   display: inline-block;
-  margin-bottom: 0.3em;  /* Adds some space below the label */
+  margin-bottom: 0.3em;
 }
 /* Footer at bottom */
 footer {
@@ -131,13 +131,13 @@ footer em {
 .kontakt-wrapper {
   display: flex;
   gap: 2em;
-  align-items: flex-start;          /* Use most of the screen */ 
+  align-items: flex-start;
   margin: 2em auto;
-  flex-wrap: wrap;         /* Allow it to stack on small screens */
+  flex-wrap: wrap;
 }
 
 .contact-info {
-  flex: 1 1 250px; /* grow/shrink, min width 250px */
+  flex: 1 1 250px;
   font-size: 1.1em;
   color: #333;
   line-height: 1.5;
@@ -148,16 +148,14 @@ footer em {
 }
 
 .map-container {
-  flex: 2 1 400px; /* bigger part, min width 400px */
+  flex: 2 1 400px;
   height: 350px;
   border: 2px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   min-width: 300px;
 }
-.map-container iframe {
-  touch-action: pan-x pan-y;
-}
+
 .icon {
   width: 20px;
   height: 20px;
@@ -175,26 +173,5 @@ footer em {
 
 .social-link:hover {
   text-decoration: underline;
-}
-
-#scrollToTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: none;  /* hidden by default */
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-}
-
-#scrollToTopBtn:hover {
-  background-color: #0056b3;
 }
 
