@@ -197,3 +197,42 @@ footer em {
   text-decoration: underline;
 }
 
+.payment-info {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+  margin: 1.5em 0;
+  flex-wrap: wrap;  /* for small screens, stack vertically */
+}
+
+.payment-text {
+  flex: 1 1 300px;  /* take available space, minimum 300px */
+  font-size: 1.1em;
+  line-height: 1.5;
+  min-width: 280px;
+}
+
+.payment-qr {
+  flex: 0 0 auto;  /* fixed size container for QR */
+  max-width: 320px;
+  text-align: center;
+}
+
+.payment-qr img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+  .payment-info {
+    flex-direction: column;
+  }
+
+  .payment-text, .payment-qr {
+    max-width: 100%;
+  }
+}
+
+
