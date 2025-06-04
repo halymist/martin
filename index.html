@@ -194,6 +194,23 @@
         </div>
       </div>
     </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const iframe = document.querySelector("iframe");
+
+        iframe.addEventListener("load", function () {
+          // If there's a sad face error (i.e. failed load), iframe.contentWindow might not be accessible
+          try {
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            // Optionally, add more checks if needed
+          } catch (e) {
+            // If access fails, force a reload
+            console.warn("Google Maps iframe reload triggered due to load failure.");
+            iframe.src = iframe.src; // simple way to reload
+          }
+        });
+      });
+    </script>
 
   </main>
 <footer> <p><em>„Požádat o pomoc není slabost. Je to první krok ke změně.“</em></p></footer>
