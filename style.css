@@ -175,16 +175,16 @@ footer em {
 
   #qr-container img {
     display: block;
-    margin: 1em auto;  /* vertical margin + horizontal auto-centering */
+    margin: 1em auto; 
     width: 60vw;
+    max-width: 300px;
     height: auto;
     border-radius: 8px;
   }
 }
 
-
 .contact-info {
-  flex: 1 1 300px;   /* slightly bigger min width */
+  flex: 1 1 300px;  
   font-size: 1.1em;
   color: #333;
   line-height: 1.5;
