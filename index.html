@@ -50,15 +50,30 @@
       <h1>Psychoterapie Žáček</h1>
       <nav>
         <ul>
-            <li><a href="#omne">O mně</a></li>
-            <li><a href="#vzdelani">Vzdělání</a></li>
-            <li><a href="#jak-pracuji">Jak pracuji</a></li>
-            <li><a href="#cenik">Objednání a ceník</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#" data-target="omne">O mně</a></li>
+          <li><a href="#" data-target="vzdelani">Vzdělání</a></li>
+          <li><a href="#" data-target="jak-pracuji">Jak pracuji</a></li>
+          <li><a href="#" data-target="cenik">Objednání a ceník</a></li>
+          <li><a href="#" data-target="kontakt">Kontakt</a></li>
         </ul>
       </nav>
     </div>
   </header>
+  <script>
+    document.querySelectorAll('a[data-target]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const sectionId = this.getAttribute('data-target');
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+          // Optional: remove hash from URL if it's already there
+          history.replaceState(null, null, ' ');
+        }
+      });
+    });
+  </script>
+
 
   <main>
     <section id="omne">
