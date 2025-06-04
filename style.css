@@ -172,15 +172,6 @@ footer em {
     border: 2px solid #ccc;
     display: block;
   }
-
-  #qr-container img {
-    display: block;
-    margin: 1em auto; 
-    width: 60vw;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-  }
 }
 
 .contact-info {
