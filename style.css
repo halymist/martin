@@ -136,6 +136,14 @@ footer em {
   color: #555;
 }
 
+#qr-container img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  border-radius: 8px;
+}
+
 
 .kontakt-wrapper {
   display: flex;
@@ -171,6 +179,14 @@ footer em {
     border-radius: 8px;
     border: 2px solid #ccc;
     display: block;
+  }
+
+  #qr-container {
+    text-align: center;
+  }
+
+  #qr-container img {
+    display: inline-block;
   }
 }
 
