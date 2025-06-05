@@ -137,9 +137,9 @@ footer em {
 }
 
 #qr-container {
-  text-align: center;
+  text-align: left;
   max-width: 320px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 
@@ -190,6 +190,7 @@ footer em {
 
   #qr-container {
     text-align: center;
+    margin: 0 auto;
   }
 
   #qr-container img {
