@@ -1,4 +1,4 @@
-/* Reset and basic layout */
+/* Reset and basics */
 html, body {
   height: 100%;
   margin: 0;
@@ -7,13 +7,21 @@ html, body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-}
-/*  background-color: #e6f0e6; */
-/*  #e6f0e6; #f4f7f9; #f9f7f4  */
-:root {
-  scroll-padding-top: 100px; 
+  background-color: #f9f7f4;
 }
 
+:root {
+  scroll-padding-top: 100px;
+}
+
+/* Container to constrain content width and center */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 /* Header with big background */
 .hero {
@@ -28,7 +36,6 @@ html, body {
   color: white;
 }
 
-/* Overlay darkens the image for readability */
 .hero .overlay {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 3em;
@@ -36,23 +43,13 @@ html, body {
   text-align: center;
 }
 
-/* Main title */
 .hero h1 {
   font-size: 3em;
   margin-bottom: 1em;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
-li {
-  margin-bottom: 0.5em;
-}
-
-ul ul {
-  margin-top: 0.5em;
-}
-
-
-/* Navigation menu inside header */
+/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
@@ -63,7 +60,6 @@ nav ul {
   flex-wrap: wrap;
 }
 
-/* Links styling */
 nav a {
   color: #fff;
   text-decoration: none;
@@ -75,51 +71,119 @@ nav a {
   transition: background-color 0.3s;
 }
 
-/* Hover effect on links */
 nav a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Responsive navigation */
 @media (max-width: 600px) {
   nav ul {
     gap: 0.5em;
   }
 
   nav a {
-    font-size: 1em; 
+    font-size: 1em;
     padding: 0.4em 0.7em;
   }
 }
 
-
+/* Main content */
 main {
   flex: 1;
-  width: 95vw;     
-  margin: 3em auto;
-  padding: 0 1.5em; 
-  box-sizing: border-box; 
+  margin: 3em 0;
 }
 
-@media (min-width: 1100px) {
-  main {
-    width: 65vw; 
-  }
+/* Lists */
+li {
+  margin-bottom: 0.5em;
 }
 
-#sluzby ul {
-  padding-left: 1.5em;
-  margin-top: 1em;
+ul ul {
+  margin-top: 0.5em;
 }
 
-#sluzby li {
-  margin-bottom: 0.6em;
+/* O mně section layout */
+.list-with-image {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.list-content {
+  flex: 1 1 auto;      /* let it shrink/grow naturally */
+  max-width: 40vw;     /* cap the width to half viewport */
+  min-width: 250px;    /* optional, to keep readability */
+}
+
+.therapy-image {
+  max-width: 220px; /* slightly smaller so it’s not too far */
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+/* Kontakt section */
+.kontakt-wrapper {
+  display: flex;
+  gap: 3vw;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin: 2em 0;
+  padding: 0 1em;
+}
+
+.contact-info {
+  flex: 1 1 300px;
+  font-size: 1.1em;
+  color: #333;
   line-height: 1.5;
+  min-width: 250px;
+  max-width: 500px; /* fixed max-width for consistency */
+  box-sizing: border-box;
 }
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5em;
+  margin: 0.5em 0;
+}
+
+.map-container {
+  flex: 1 1 400px;
+  height: 350px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 300px;
+  max-width: 550px; /* fixed max-width */
+  box-sizing: border-box;
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.icon-emoji {
+  display: inline-block;
+  width: 1.5em;
+  text-align: center;
+}
+
 .hours-label {
   display: inline-block;
-  margin-bottom: 0.3em;
 }
-/* Footer at bottom */
+
+/* Footer */
 footer {
   text-align: center;
   color: #777;
@@ -151,17 +215,26 @@ footer em {
   border-radius: 8px;
 }
 
+@media (max-width: 1100px) {
+  /* Navigation adjustments */
+  nav ul {
+    gap: 0.5em;
+  }
 
-.kontakt-wrapper {
-  display: flex;
-  gap: 2em;
-  align-items: flex-start;
-  margin: 2em auto;
-  flex-wrap: nowrap;   
-  max-width: 100%;    
-}
+  nav a {
+    font-size: 1em; 
+    padding: 0.4em 0.7em;
+  }
 
-@media (max-width: 768px) {
+  /* Main width can be full or 95vw, so you can remove the earlier main width changes if needed */
+  main {
+    width: 95vw;
+    margin: 3em auto;
+    padding: 0 1.5em;
+    box-sizing: border-box;
+  }
+
+  /* Kontakt section - stack and full width on smaller screens */
   .kontakt-wrapper {
     flex-wrap: wrap;
     padding: 0;
@@ -177,7 +250,7 @@ footer em {
   .map-container {
     display: flex;
     justify-content: center;
-    margin: 0 auto;       /* Center it horizontally */
+    margin: 0 auto;
     width: 100%;
   }
 
@@ -188,111 +261,19 @@ footer em {
     display: block;
   }
 
+  /* QR container adjustments */
   #qr-container {
     text-align: center;
     margin: 0 auto;
   }
 
   #qr-container img {
-      max-width: 100%;
-      height: auto;
-      width:100%;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
   }
-}
 
-.contact-info {
-  flex: 1 1 300px;  
-  font-size: 1.1em;
-  color: #333;
-  line-height: 1.5;
-  min-width: 250px;
-  max-width: 40vw;   /* limit width so map has space */
-  box-sizing: border-box;
-}
-
-.contact-info p {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;     
-  gap: 0.5em;             
-  margin: 0.5em 0;
-}
-
-
-.map-container {
-  flex: 1 1 400px;
-  height: 350px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  min-width: 300px;
-  max-width: 55vw;
-  box-sizing: border-box;
-}
-
-.map-container iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-right: 0.5em;
-}
-
-.icon-emoji {
-  display: inline-block;
-  width: 1.5em; 
-  text-align: center;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  font-weight: 500;
-}
-
-.social-link:hover {
-  text-decoration: underline;
-}
-
-.payment-info {
-  display: flex;
-  gap: 2em;
-  align-items: flex-start;
-  margin: 1.5em 0;
-  flex-wrap: wrap;  /* for small screens, stack vertically */
-}
-
-.payment-text {
-  flex: 1 1 300px;  /* take available space, minimum 300px */
-  font-size: 1.1em;
-  line-height: 1.5;
-  min-width: 280px;
-}
-
-.payment-qr {
-  flex: 0 0 auto;  /* fixed size container for QR */
-  max-width: 320px;
-  text-align: center;
-}
-
-.payment-qr img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 600px) {
+  /* Payment info stacked vertically */
   .payment-info {
     flex-direction: column;
   }
@@ -300,6 +281,25 @@ footer em {
   .payment-text, .payment-qr {
     max-width: 100%;
   }
+
+  .list-with-image {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .therapy-image {
+    margin-top: 1.5em;
+    max-width: 60vw;
+    width: 60vw;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .list-content {
+    flex: none;
+    width: 100%;
+  }
 }
-
-
