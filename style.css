@@ -7,8 +7,6 @@ html, body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-  background-color: #f0fff0;
-
 }
 
 :root {
